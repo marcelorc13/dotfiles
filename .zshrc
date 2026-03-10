@@ -13,7 +13,6 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 source $HOME/.local/bin/env
 
-ZSH_THEME="apple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -71,15 +70,17 @@ ZSH_THEME="apple"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+ZSH_THEME="kolo"
+# ZSH_THEME="lambda"
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source $ZSH/oh-my-zsh.sh
 
 eval "$(zoxide init --cmd cd zsh)"
 
 source ~/.aliases
 
 # User configuration
+
 
 export EDITOR='nvim'
 
