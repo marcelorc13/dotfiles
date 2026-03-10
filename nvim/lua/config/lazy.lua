@@ -54,15 +54,37 @@ require("lazy").setup({
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
+		build = "cd app && npm install", -- Manually trigger npm install
 	},
 	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
+		'javiorfo/nvim-soil',
+		dependencies = { 'javiorfo/nvim-nyctophilia' },
+		lazy = false,
+		ft = "plantuml",
+		opts = {
+			-- This option closes the image viewer and reopen the image generated
+			-- When true this offers some kind of online updating (like plantuml web server)
+			actions = {
+				redraw = false
+			},
+
+			-- If you want to use Plant UML jar version instead of the installed version
+			puml_jar = "~/opt/plantuml/plantuml.jar",
+
+			-- If you want to customize the image showed when running this plugin
+			image = {
+				darkmode = false, -- Enable or disable darkmode
+				format = "png", -- Choose between png or svg
+
+				-- This is a default implementation of using nsxiv to open the resultant image
+				-- Edit the string to use your preferred app to open the image (as if it were a command line)
+				-- Some examples:
+				-- return "feh " .. img
+				-- return "xdg-open " .. img
+				execute_to_open = function(img)
+					return "nsxiv -b " .. img
+				end
+			}
+		}
 	},
 })
