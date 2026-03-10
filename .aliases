@@ -6,7 +6,9 @@ alias lgit="lazygit"
 alias c="clear"
 alias Q="exit"
 
-alias src="source ~/.zshrc"
+alias srcz="source ~/.zshrc"
+alias srcb="source ~/.bashrc"
+alias srct="tmux source ~/.tmux.conf"
 
 alias update="sudo apt update && sudo apt upgrade"
 
