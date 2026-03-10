@@ -1,0 +1,55 @@
+alias vim="nvim"
+alias vi="nvim"
+
+alias lgit="lazygit"
+
+alias c="clear"
+alias Q="exit"
+
+alias src="source ~/.zshrc"
+
+alias update="sudo apt update && sudo apt upgrade"
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+tmuxnew() {
+    if [ -z "$1" ]; then
+        echo "Usage: tmmuxnew <nome_da_sessao>"
+        return 1
+    fi
+
+    SESSION_NAME="$1"
+
+    if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+        echo "⚠️ Session '$SESSION_NAME' already exists. Attaching to it..."
+        tmux attach-session -t "$SESSION_NAME"
+    else
+        tmux new-session -d -s "$SESSION_NAME"
+        tmux attach-session -t "$SESSION_NAME"
+    fi
+}
+
+psqlnew() {
+    if [ -z "$1" ]; then
+        echo "Usage: opsql <user> <port>"
+        return 1
+    fi
+
+    USER="$1"
+    PORT="$2"
+
+	psql -U "$USER" -p "$PORT" -h localhost -d postgres
+}
+

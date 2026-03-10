@@ -8,12 +8,20 @@ echo "Linking dotfiles from $DOTFILES_DIR..."
 # 1. Ensure the ~/.config directory exists
 mkdir -p ~/.config
 
-# 2. Link Neovim 
-ln -sfn "$DOTFILES_DIR/nvim" ~/.config/nvim
+# Link Neovim 
+ln -sfn "$DOTFILES_DIR/nvim" ~/.config/
 echo "✓ Neovim linked to ~/.config/nvim"
 
-# 3. Link Tmux 
+# Link Tmux 
 ln -sf "$DOTFILES_DIR/.tmux.conf" ~/.tmux.conf
 echo "✓ Tmux linked to ~/.tmux.conf"
+
+# Link Zshrc 
+ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
+echo "✓ Zshrc linked to ~/.zshrc"
+
+# Link Aliases 
+ln -sf "$DOTFILES_DIR/.aliases" ~/.aliases
+echo "✓ Aliases linked to ~/.aliases"
 
 echo "Done! Restart your terminal or source your configs."
