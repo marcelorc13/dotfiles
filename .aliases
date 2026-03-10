@@ -26,6 +26,26 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# git aliases
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add --all"
+alias gc="git commit -m"
+alias gps="git push"
+alias gpl="git pull"
+alias gd="git diff"
+alias grs="git restore --staged"
+alias grsa="git restore --staged ."
+
+alias gl="git log --decorate --all"
+alias glo="git log --oneline --decorate --all"
+alias gld="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+
+alias gb="git branch"
+alias gsw="git switch"
+alias gswc="git switch -c"
+alias gm="git merge"
+
 tmuxnew() {
     if [ -z "$1" ]; then
         echo "Usage: tmmuxnew <nome_da_sessao>"
