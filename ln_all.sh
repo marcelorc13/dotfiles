@@ -15,8 +15,6 @@ echo "✓ Neovim linked to ~/.config/nvim"
 # Link Tmux 
 ln -sf "$DOTFILES_DIR/.tmux.conf" ~/.tmux.conf
 echo "✓ Tmux linked to ~/.tmux.conf"
-ln -sf "$DOTFILES_DIR/.tmux" ~/
-echo "✓ Tmux plugins linked to ~/.tmux/"
 
 # Link Zshrc 
 ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
