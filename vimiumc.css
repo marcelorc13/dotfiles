@@ -1,0 +1,10 @@
+/* Put this in the "Custom CSS for Vimium C UI" section of the settings. */
+.LH {
+  color: #000000;
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-radius: 10px;
+  padding: 4px;
+  opacity: 75%;
+  border: 0;
+}
