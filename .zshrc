@@ -81,6 +81,7 @@ source ~/.aliases
 
 # User configuration
 
+[[ -f ~/.secrets ]] && source ~/.secrets
 
 export EDITOR='nvim'
 

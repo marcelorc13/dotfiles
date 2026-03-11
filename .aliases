@@ -31,6 +31,7 @@ alias gs="git status"
 alias ga="git add"
 alias gaa="git add --all"
 alias gc="git commit -m"
+alias gca="git commit --amend"
 alias gps="git push"
 alias gpl="git pull"
 alias gd="git diff"
@@ -75,3 +76,10 @@ psqlnew() {
 	psql -U "$USER" -p "$PORT" -h localhost -d postgres
 }
 
+ask() {
+    if [ -z "$*" ]; then
+        echo "Usage: ?? <question>"
+        return 1
+    fi
+    gemini -p "$*"
+}

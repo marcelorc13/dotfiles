@@ -24,4 +24,10 @@ echo "✓ Zshrc linked to ~/.zshrc"
 ln -sf "$DOTFILES_DIR/.aliases" ~/.aliases
 echo "✓ Aliases linked to ~/.aliases"
 
+if [[ ! -f ~/.secrets ]]; then
+    echo "⚠️  ~/.secrets not found! Create it with your API keys:"
+    echo "echo 'export GEMINI_API_KEY=your_key_here' >> ~/.secrets"
+    echo "chmod 600 ~/.secrets"
+fi
+
 echo "Done! Restart your terminal or source your configs."
