@@ -66,19 +66,17 @@ tmuxnew() {
 
 psqlnew() {
     if [ -z "$1" ]; then
-        echo "Usage: opsql <user> <port>"
+        echo "Usage: psqlnew <user> <port>"
         return 1
     fi
-
-    USER="$1"
-    PORT="$2"
-
-	psql -U "$USER" -p "$PORT" -h localhost -d postgres
+	  DB_USER="$1"
+    DB_PORT="$2"
+    psql -U "$DB_USER" -p "$DB_PORT" -h localhost -d postgres
 }
 
-ask() {
+ai() {
     if [ -z "$*" ]; then
-        echo "Usage: ?? <question>"
+        echo "Usage: ai <question>"
         return 1
     fi
     gemini -p "$*"
