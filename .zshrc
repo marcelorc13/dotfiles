@@ -70,8 +70,11 @@ source $HOME/.local/bin/env
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-ZSH_THEME="kolo"
+# ZSH_THEME="kolo"
 # ZSH_THEME="lambda"
+# ZSH_THEME="cloud"
+ZSH_THEME="minimal"
+# ZSH_THEME="theunraveler"
 
 source $ZSH/oh-my-zsh.sh
 
