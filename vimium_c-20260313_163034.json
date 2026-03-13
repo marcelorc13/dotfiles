@@ -1,0 +1,63 @@
+{
+	"name": "Vimium C",
+	"@time": "3/13/2026, 4:30:34 PM",
+	"time": 1773430234787,
+	"environment": {
+		"extension": "2.12.3",
+		"platform": "linux",
+		"firefox": 140
+	},
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://term.ooo/"
+		}
+	],
+	"keyLayout": 2,
+	"newTabUrl": "google.com",
+	"searchEngines": [
+		"g|go|gg|google|Google: https://www.google.com/search?q=%s \\",
+		"  www.google.com re=/^(?:\\.[a-z]{2,4})?\\/search\\b.*?[#&?]q=([^#&]*)/i \\",
+		"  blank=https://www.google.com/ Google",
+		"",
+		"d|dd|ddg|duckduckgo: https://duckduckgo.com/?q=%s DuckDuckGo",
+		"",
+		"y|yt: https://www.youtube.com/results?search_query=%s \\",
+		"  blank=https://www.youtube.com/ YouTube",
+		"",
+		"w|wiki: https://www.wikipedia.org/w/index.php?search=%s Wikipedia",
+		"",
+		"a|ae|ali|alie|aliexp: https://www.aliexpress.com/wholesale?SearchText=%s \\",
+		"  blank=https://www.aliexpress.com/ AliExpress",
+		"",
+		"ml|mercadolivre: https://lista.mercadolivre.com.br/%s#D[A:v] \\",
+		"  blank=https://www.mercadolivre.com.br/ Mercado Livre",
+		"",
+		"az|amazon: https://www.amazon.com/s?k=%s \\",
+		"  blank=https://www.amazon.com/ Amazon",
+		"",
+		"gh|github: https://github.com/search?q=$s \\",
+		"  blank=https://github.com/ GitHub Repo",
+		""
+	],
+	"userDefinedCss": [
+		".LH {",
+		"  color: #000000;",
+		"  background-color: #ffffff !important;",
+		"  background-image: none !important;",
+		"  border-radius: 10px;",
+		"  padding: 4px;",
+		"  opacity: 75%;",
+		"  border: 0;",
+		"}",
+		""
+	],
+	"vimSync": true,
+	"vomnibarOptions": {
+		"actions": "",
+		"maxMatches": 12,
+		"queryInterval": 200,
+		"sizes": "77,3,44,0.8,1944",
+		"styles": "mono-url dark mono-input"
+	}
+}
