@@ -87,4 +87,8 @@ require("lazy").setup({
 			}
 		}
 	},
+	{
+		"R-nvim/R.nvim",
+		lazy = false
+	},
 })
