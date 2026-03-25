@@ -28,6 +28,12 @@ require("lazy").setup({
 	require("plugins.windsurf"),
 	require("plugins.octo"),
 	{
+		"sindrets/diffview.nvim",
+		config = function()
+			require("diffview").setup({})
+		end,
+	},
+	{
 		"sphamba/smear-cursor.nvim",
 		opts = {
 			smear_between_buffers = true,
