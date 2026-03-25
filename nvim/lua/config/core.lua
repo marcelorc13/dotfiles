@@ -1,6 +1,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
+vim.opt.virtualedit = "all"
 vim.opt.colorcolumn = "90,120,150"
 
 vim.opt.cursorline = true
