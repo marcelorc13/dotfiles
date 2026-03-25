@@ -26,6 +26,7 @@ require("lazy").setup({
 	require("plugins.oil"),
 	require("plugins.telescope"),
 	require("plugins.windsurf"),
+	require("plugins.octo"),
 	{
 		"sphamba/smear-cursor.nvim",
 		opts = {

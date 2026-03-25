@@ -1,6 +1,8 @@
 alias vim="nvim"
 alias vi="nvim"
 
+alias oil="nvim -c Oil"
+
 alias lgit="lazygit"
 
 alias c="clear"
