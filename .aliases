@@ -71,7 +71,7 @@ psqlnew() {
         echo "Usage: psqlnew <user> <port>"
         return 1
     fi
-	  DB_USER="$1"
+	DB_USER="$1"
     DB_PORT="$2"
     psql -U "$DB_USER" -p "$DB_PORT" -h localhost -d postgres
 }
@@ -81,5 +81,5 @@ ai() {
         echo "Usage: ai <question>"
         return 1
     fi
-    gemini -p "$*"
+    aichat "$*"
 }
