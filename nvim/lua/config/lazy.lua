@@ -25,7 +25,7 @@ require("lazy").setup({
 	require("plugins.alpha"),
 	require("plugins.oil"),
 	require("plugins.telescope"),
-	require("plugins.windsurf"),
+	-- require("plugins.windsurf"),
 	require("plugins.octo"),
 	{
 		"sindrets/diffview.nvim",
