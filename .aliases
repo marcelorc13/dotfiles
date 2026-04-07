@@ -5,6 +5,8 @@ alias oil="nvim -c Oil"
 
 alias lgit="lazygit"
 
+alias dash="gh dash"
+
 alias c="clear"
 alias Q="exit"
 
