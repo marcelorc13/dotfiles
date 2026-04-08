@@ -1,0 +1,14 @@
+format = """
+[](fg:#2D2C29)\
+$directory\
+[](fg:#2D2C29)\
+$character
+"""
+
+[directory]
+style = "bg:#2D2C29 fg:#C8C093"
+format = "[ $path ]($style)"
+
+[character]
+success_symbol = "[❯](bold #76946A)"
+error_symbol = "[❯](bold #C34043)"
