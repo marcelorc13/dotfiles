@@ -12,6 +12,14 @@ mkdir -p ~/.config
 ln -sfn "$DOTFILES_DIR/nvim" ~/.config/
 echo "✓ Neovim linked to ~/.config/nvim"
 
+# Link Github extensions 
+ln -sfn "$DOTFILES_DIR/gh-dash" ~/.config/
+ln -sfn "$DOTFILES_DIR/diffnav" ~/.config/
+echo "✓ Git and Github extensions linked to ~/.config/..."
+
+ln -sfn "$DOTFILES_DIR/lazygit" ~/.config/
+echo "✓ Lazygit configs linked to ~/.config/lazygit"
+
 # Link Tmux 
 ln -sf "$DOTFILES_DIR/.tmux.conf" ~/.tmux.conf
 echo "✓ Tmux linked to ~/.tmux.conf"
@@ -23,11 +31,5 @@ echo "✓ Zshrc linked to ~/.zshrc"
 # Link Aliases 
 ln -sf "$DOTFILES_DIR/.aliases" ~/.aliases
 echo "✓ Aliases linked to ~/.aliases"
-
-if [[ ! -f ~/.secrets ]]; then
-    echo "⚠️  ~/.secrets not found! Create it with your API keys:"
-    echo "echo 'export GEMINI_API_KEY=your_key_here' >> ~/.secrets"
-    echo "chmod 600 ~/.secrets"
-fi
 
 echo "Done! Restart your terminal or source your configs."

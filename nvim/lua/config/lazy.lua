@@ -25,7 +25,24 @@ require("lazy").setup({
 	require("plugins.alpha"),
 	require("plugins.oil"),
 	require("plugins.telescope"),
-	require("plugins.windsurf"),
+	-- require("plugins.windsurf"),
+	require("plugins.octo"),
+	{
+		"sindrets/diffview.nvim",
+		config = function()
+			require("diffview").setup({})
+		end,
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+		opts = {
+			smear_between_buffers = true,
+			smear_between_neighbor_lines = true,
+			scroll_buffer_space = true,
+			legacy_computing_symbols_support = false,
+			smear_insert_mode = true,
+		}
+	},
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()

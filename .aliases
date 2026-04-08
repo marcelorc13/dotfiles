@@ -1,7 +1,11 @@
 alias vim="nvim"
 alias vi="nvim"
 
+alias oil="nvim -c Oil"
+
 alias lgit="lazygit"
+
+alias dash="gh dash"
 
 alias c="clear"
 alias Q="exit"
@@ -22,6 +26,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias ..='cd ..'
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -56,7 +62,6 @@ tmuxnew() {
     SESSION_NAME="$1"
 
     if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
-        echo "⚠️ Session '$SESSION_NAME' already exists. Attaching to it..."
         tmux attach-session -t "$SESSION_NAME"
     else
         tmux new-session -d -s "$SESSION_NAME"
@@ -69,7 +74,7 @@ psqlnew() {
         echo "Usage: psqlnew <user> <port>"
         return 1
     fi
-	  DB_USER="$1"
+	DB_USER="$1"
     DB_PORT="$2"
     psql -U "$DB_USER" -p "$DB_PORT" -h localhost -d postgres
 }
@@ -79,5 +84,5 @@ ai() {
         echo "Usage: ai <question>"
         return 1
     fi
-    gemini -p "$*"
+    aichat "$*"
 }
