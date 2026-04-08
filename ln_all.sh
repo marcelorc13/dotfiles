@@ -8,6 +8,14 @@ echo "Linking dotfiles from $DOTFILES_DIR..."
 # 1. Ensure the ~/.config directory exists
 mkdir -p ~/.config
 
+# Link Kitty 
+ln -sfn "$DOTFILES_DIR/kitty" ~/.config/
+echo "✓ Kitty configs linked to ~/.config/kitty"
+
+# Link Starship 
+ln -sfn "$DOTFILES_DIR/starship.toml" ~/.config/
+echo "✓ Starship configs linked to ~/.config/starship.toml"
+
 # Link Neovim 
 ln -sfn "$DOTFILES_DIR/nvim" ~/.config/
 echo "✓ Neovim linked to ~/.config/nvim"
