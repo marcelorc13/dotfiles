@@ -31,3 +31,7 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
 vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
 vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
+-- errors
+vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>eN', vim.diagnostic.goto_prev)
+vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float)
