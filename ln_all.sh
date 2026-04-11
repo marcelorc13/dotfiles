@@ -8,6 +8,10 @@ echo "Linking dotfiles from $DOTFILES_DIR..."
 # 1. Ensure the ~/.config directory exists
 mkdir -p ~/.config
 
+# Link Hyprland 
+ln -sfn "$DOTFILES_DIR/hypr" ~/.config/
+echo "✓ Kitty configs linked to ~/.config/hypr"
+
 # Link Kitty 
 ln -sfn "$DOTFILES_DIR/kitty" ~/.config/
 echo "✓ Kitty configs linked to ~/.config/kitty"
