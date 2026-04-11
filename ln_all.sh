@@ -24,6 +24,10 @@ echo "✓ Starship configs linked to ~/.config/starship.toml"
 ln -sfn "$DOTFILES_DIR/nvim" ~/.config/
 echo "✓ Neovim linked to ~/.config/nvim"
 
+# Link Yazi 
+ln -sfn "$DOTFILES_DIR/yazi" ~/.config/
+echo "✓ Yazi linked to ~/.config/yazi"
+
 # Link Github extensions 
 ln -sfn "$DOTFILES_DIR/gh-dash" ~/.config/
 ln -sfn "$DOTFILES_DIR/diffnav" ~/.config/
