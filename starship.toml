@@ -1,14 +1,53 @@
 format = """
-[](fg:#2D2C29)\
+$username\
+$hostname\
 $directory\
-[](fg:#2D2C29)\
 $character
 """
 
+add_newline = false
+
+palette = "kanagawa_dragon"
+
+[palettes.kanagawa_dragon]
+black1 = "#0d0c0c"
+black2 = "#12120f"
+black3 = "#625e5a"
+white = "#c5c9c5"
+red    = "#c4746e"
+green  = "#87a987"
+yellow = "#c4b28a"
+blue   = "#8ba4b1"
+pink   = "#a292a3"
+aqua   = "#8ea4a2"
+orange = "#b6927b"
+gray   = "#a6a69c"
+
 [directory]
-style = "bg:#2D2C29 fg:#C8C093"
-format = "[ $path ]($style)"
+style = "fg:aqua" 
+format = "[$path ]($style)"
+truncation_length = 2
+
+[username]
+style_user = 'pink bold'
+format = '[$user on ]($style)'
+disabled = false
+show_always = true
 
 [character]
-success_symbol = "[❯](bold #76946A)"
-error_symbol = "[❯](bold #C34043)"
+success_symbol = "[](bold white)"
+error_symbol = "[](bold white)"
+
+# symbols
+# 
+# ❯
+# 󰁕
+# 󱞩
+# 
+# 󰫈
+# 
+# 󰐊
+# 󱗗
+# 󱐋
+# 
+# 󰅬
