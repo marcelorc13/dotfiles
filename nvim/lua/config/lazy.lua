@@ -6,7 +6,7 @@ if not vim.uv.fs_stat(lazypath) then
 	if vim.v.shell_error ~= 0 then
 		vim.api.nvim_echo({
 			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out,                            "WarningMsg" },
+			{ out, "WarningMsg" },
 			{ "\nPress any key to exit...\n" },
 		}, true, {})
 		vim.fn.getchar()
@@ -27,6 +27,12 @@ require("lazy").setup({
 	require("plugins.telescope"),
 	-- require("plugins.windsurf"),
 	require("plugins.octo"),
+
+	{
+		"iamcco/markdown-preview.nvim",
+		build = "cd app && npm install",
+		kft = "markdown",
+	},
 	{
 		"sindrets/diffview.nvim",
 		config = function()
@@ -41,7 +47,7 @@ require("lazy").setup({
 			scroll_buffer_space = true,
 			legacy_computing_symbols_support = false,
 			smear_insert_mode = true,
-		}
+		},
 	},
 	{
 		"lewis6991/gitsigns.nvim",
@@ -63,9 +69,9 @@ require("lazy").setup({
 		event = "VeryLazy",
 		priority = 1000,
 		config = function()
-			require('tiny-inline-diagnostic').setup()
+			require("tiny-inline-diagnostic").setup()
 			vim.diagnostic.config({ virtual_text = false })
-		end
+		end,
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -74,15 +80,15 @@ require("lazy").setup({
 		build = "cd app && npm install", -- Manually trigger npm install
 	},
 	{
-		'javiorfo/nvim-soil',
-		dependencies = { 'javiorfo/nvim-nyctophilia' },
+		"javiorfo/nvim-soil",
+		dependencies = { "javiorfo/nvim-nyctophilia" },
 		lazy = false,
 		ft = "plantuml",
 		opts = {
 			-- This option closes the image viewer and reopen the image generated
 			-- When true this offers some kind of online updating (like plantuml web server)
 			actions = {
-				redraw = false
+				redraw = false,
 			},
 
 			-- If you want to use Plant UML jar version instead of the installed version
@@ -100,12 +106,12 @@ require("lazy").setup({
 				-- return "xdg-open " .. img
 				execute_to_open = function(img)
 					return "nsxiv -b " .. img
-				end
-			}
-		}
+				end,
+			},
+		},
 	},
 	{
 		"R-nvim/R.nvim",
-		lazy = false
+		lazy = false,
 	},
 })
