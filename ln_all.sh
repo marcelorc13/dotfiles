@@ -12,6 +12,10 @@ mkdir -p ~/.config
 ln -sfn "$DOTFILES_DIR/hypr" ~/.config/
 echo "✓ Kitty configs linked to ~/.config/hypr"
 
+# Link Hyprland Waybar 
+ln -sfn "$DOTFILES_DIR/waybar" ~/.config/
+echo "✓ Kitty configs linked to ~/.config/waybar"
+
 # Link Kitty 
 ln -sfn "$DOTFILES_DIR/kitty" ~/.config/
 echo "✓ Kitty configs linked to ~/.config/kitty"
