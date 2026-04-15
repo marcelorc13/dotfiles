@@ -92,10 +92,13 @@ return {
 					filetypes = { "yaml" },
 				},
 				ruby_lsp = {},
+				csharp_ls = {
+					root_dir = util.root_pattern("*.sln", "*.csproj", ".git"),
+				},
 			}
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "gopls", "templ", "ts_ls", "pyright", "tinymist", "yamlls"},
+				ensure_installed = { "lua_ls", "gopls", "templ", "ts_ls", "pyright", "tinymist", "yamlls", "csharp_ls"},
 				handlers = {
 					function(server_name)
 						local server_config = servers[server_name] or {}
