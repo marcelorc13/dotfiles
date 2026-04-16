@@ -98,7 +98,15 @@ return {
 			}
 
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "gopls", "templ", "ts_ls", "pyright", "tinymist", "yamlls", "csharp_ls"},
+				ensure_installed = {
+					"lua_ls",
+					"gopls",
+					"templ",
+					"ts_ls",
+					"pyright",
+					"tinymist",
+					"yamlls"
+				},
 				handlers = {
 					function(server_name)
 						local server_config = servers[server_name] or {}
