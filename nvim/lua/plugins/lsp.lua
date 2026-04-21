@@ -13,12 +13,10 @@ return {
 				callback = function(ev)
 					local client = vim.lsp.get_client_by_id(ev.data.client_id)
 					local opts = { buffer = ev.buf }
-
 					local map = function(mode, lhs, rhs, desc)
 						opts.desc = desc
 						vim.keymap.set(mode, lhs, rhs, opts)
 					end
-
 					map("n", "K", vim.lsp.buf.hover, "Hover")
 					map("n", "gr", vim.lsp.buf.references, "Referências")
 					map("n", "gd", vim.lsp.buf.definition, "Ir para definição")
@@ -27,7 +25,6 @@ return {
 					map("n", "<leader>F", function()
 						vim.lsp.buf.format({ async = true })
 					end, "Formatar")
-
 					local ft = vim.bo[ev.buf].filetype
 					if ft == "typescript" or ft == "typescriptreact" or ft == "javascript" or ft == "javascriptreact" then
 						vim.api.nvim_create_autocmd("BufWritePre", {
@@ -40,15 +37,16 @@ return {
 							end,
 						})
 					end
+					if client and client.name == "omnisharp" then
+						client.server_capabilities.semanticTokensProvider = nil
+					end
 				end,
 			})
-
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 			if ok then
 				capabilities = cmp_nvim_lsp.default_capabilities()
 			end
-
 			local util = require("lspconfig.util")
 			local servers = {
 				lua_ls = {
@@ -92,11 +90,20 @@ return {
 					filetypes = { "yaml" },
 				},
 				ruby_lsp = {},
-				csharp_ls = {
+				omnisharp = {
+					cmd = { "omnisharp" },
 					root_dir = util.root_pattern("*.sln", "*.csproj", ".git"),
+					settings = {
+						omnisharp = {
+							enableRoslynAnalyzers = true,
+							enableEditorConfigSupport = true,
+							enableImportCompletion = true,
+							organizeImportsOnFormat = true,
+							enableDecompilationSupport = true,
+						},
+					},
 				},
 			}
-
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
@@ -105,7 +112,8 @@ return {
 					"ts_ls",
 					"pyright",
 					"tinymist",
-					"yamlls"
+					"yamlls",
+					-- "omnisharp",
 				},
 				handlers = {
 					function(server_name)

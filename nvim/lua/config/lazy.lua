@@ -25,9 +25,13 @@ require("lazy").setup({
 	require("plugins.alpha"),
 	require("plugins.oil"),
 	require("plugins.telescope"),
-	-- require("plugins.windsurf"),
 	require("plugins.octo"),
-
+   {
+		'brianhuster/live-preview.nvim',
+		  dependencies = {
+		  'nvim-telescope/telescope.nvim',
+		  },
+	},
 	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && npm install",
@@ -72,12 +76,6 @@ require("lazy").setup({
 			require("tiny-inline-diagnostic").setup()
 			vim.diagnostic.config({ virtual_text = false })
 		end,
-	},
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = "cd app && npm install", -- Manually trigger npm install
 	},
 	{
 		"javiorfo/nvim-soil",
