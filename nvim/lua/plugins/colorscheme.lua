@@ -29,6 +29,13 @@ return {
 		'rebelot/kanagawa.nvim',
 		lazy = false,
 		priority = 1000,
+		opts = {
+			colors = {
+				theme = {
+					dragon = { ui = { bg = "#1D1C19", bg_dim = "#1D1C19" } },
+				},
+			},
+		},
 	},
 	{
 		"vague-theme/vague.nvim",
