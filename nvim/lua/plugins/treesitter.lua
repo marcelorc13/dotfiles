@@ -8,7 +8,7 @@ return {
       ensure_installed = {
         "javascript", "typescript", "tsx", "html", "css", "json",
         "go", "gomod", "gowork", "gosum",
-        "lua", "vim", "vimdoc", "templ", "python", "sql", "markdown", "markdown_inline",
+        "lua", "vim", "vimdoc", "templ", "python", "sql", "markdown", "markdown_inline", "razor",
       },
       auto_install = true,
       highlight = { enable = true },
