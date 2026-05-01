@@ -1,16 +1,21 @@
 {
 	"name": "Vimium C",
-	"@time": "3/13/2026, 4:30:34 PM",
-	"time": 1773430234787,
+	"@time": "4/29/2026, 7:29:20 PM",
+	"time": 1777501760162,
 	"environment": {
-		"extension": "2.12.3",
+		"extension": "2.12.2",
 		"platform": "linux",
-		"firefox": 140
+		"chromium": 147
 	},
+	"exclusionListenHash": false,
 	"exclusionRules": [
 		{
 			"passKeys": "",
 			"pattern": ":https://term.ooo/"
+		},
+		{
+			"passKeys": "r ",
+			"pattern": ":https://web.whatsapp.com/"
 		}
 	],
 	"keyLayout": 2,
