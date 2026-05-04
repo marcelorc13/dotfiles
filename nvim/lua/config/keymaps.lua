@@ -35,3 +35,5 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>eN', vim.diagnostic.goto_prev)
 vim.keymap.set('n', '<leader>E', vim.diagnostic.open_float)
+
+vim.keymap.set('n', '<leader>?', '<cmd>Telescope keymaps<CR>', opts)
