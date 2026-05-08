@@ -42,7 +42,7 @@ return {
 
 		theme.section.buttons.val = {
 			theme.button("o", "  Open File Explorer (Oil)", "<cmd>Oil<CR>"),
-			theme.button("f", "󰈞  Find file", "<cmd>Telescope find_files <CR>"),
+			theme.button("f", "󰈞  Find file", "<cmd>Telescope find_files hidden=true <CR>"),
 			theme.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
 		}
 

@@ -3,6 +3,9 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
         use_default_keymaps = true,
+        view_options = {
+            show_hidden = true,
+        },
         win_options = {
             signcolumn = "yes:2",
         },
