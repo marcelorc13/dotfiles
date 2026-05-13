@@ -1,7 +1,7 @@
 @import "../omarchy/current/theme/waybar.css";
 
 * {
-  background-color: @background;
+  background-color: transparent;
   color: @foreground;
 
   border: none;
@@ -9,93 +9,145 @@
   min-height: 0;
   font-family: 'RobotoMono Nerd Font Mono';
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: alpha(@background, 0.75);
+  border-bottom: 1px solid alpha(@foreground, 0.05);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background-color: alpha(@background, 0.0);
+  margin: 4px 6px;
+  border-radius: 12px;
 }
 
 .modules-left {
-  margin-left: 8px;
+  padding: 0 4px;
+}
+
+.modules-center {
+  padding: 0 14px;
 }
 
 .modules-right {
-  margin-right: 8px;
+  padding: 0 8px;
+}
+
+#workspaces {
+  background-color: alpha(@background, 0.0);
+  border-radius: 10px;
+  margin: 3px 0;
+  padding: 0 4px;
 }
 
 #workspaces button {
   all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
+  color: @foreground;
+  font-family: 'RobotoMono Nerd Font Mono';
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0 7px;
+  margin: 0 1px;
   min-width: 9px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-#workspaces button.empty {
-  opacity: 0.5;
+#workspaces button:hover {
+  background-color: alpha(@foreground, 0.1);
+}
+
+#workspaces button.active {
+  background-color: alpha(@foreground, 0.18);
+  color: @foreground;
+}
+
+#workspaces button.urgent {
+  color: #c34043;
+}
+
+#clock {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 #cpu,
 #battery,
 #pulseaudio,
-#custom-omarchy,
 #custom-update {
   min-width: 12px;
-  margin: 0 7.5px;
+  margin: 0 5px;
 }
 
 #tray {
-  margin-right: 16px;
+  margin-right: 10px;
 }
 
 #bluetooth {
-  margin-right: 17px;
+  margin-right: 10px;
 }
 
 #network {
-  margin-right: 13px;
+  margin-right: 8px;
 }
 
 #custom-expand-icon {
-  margin-right: 18px;
+  margin-right: 12px;
 }
 
 tooltip {
-  padding: 2px;
+  background-color: alpha(@background, 0.92);
+  border: 1px solid alpha(@foreground, 0.12);
+  border-radius: 10px;
+  padding: 4px 8px;
 }
 
 #custom-update {
   font-size: 10px;
 }
 
-#clock {
-  margin-left: 8.75px;
-}
-
 .hidden {
   opacity: 0;
+  min-width: 0;
 }
 
 #custom-screenrecording-indicator,
 #custom-idle-indicator,
 #custom-notification-silencing-indicator {
   min-width: 12px;
-  margin-left: 5px;
+  margin-left: 4px;
   margin-right: 0;
   font-size: 10px;
   padding-bottom: 1px;
 }
 
 #custom-screenrecording-indicator.active {
-  color: #a55555;
+  color: #c34043;
 }
 
 #custom-idle-indicator.active,
 #custom-notification-silencing-indicator.active {
-  color: #a55555;
+  color: #c34043;
 }
 
 #custom-voxtype {
   min-width: 12px;
-  margin: 0 0 0 7.5px;
+  margin: 0 0 0 5px;
 }
 
 #custom-voxtype.recording {
-  color: #a55555;
+  color: #c34043;
+}
+
+#battery.warning {
+  color: #e98a00;
+}
+
+#battery.critical {
+  color: #c34043;
 }
