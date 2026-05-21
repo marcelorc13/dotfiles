@@ -40,13 +40,14 @@ echo "✓ Git and Github extensions linked to ~/.config/..."
 ln -sfn "$DOTFILES_DIR/lazygit" ~/.config/
 echo "✓ Lazygit configs linked to ~/.config/lazygit"
 
+# Link fastfetch
+ln -sfn "$DOTFILES_DIR/fastfetch" ~/.config/
+echo "✓ Lazygit configs linked to ~/.config/fastfetch"
+
 # Link Tmux 
 ln -sf "$DOTFILES_DIR/.tmux.conf" ~/.tmux.conf
 echo "✓ Tmux linked to ~/.tmux.conf"
 
-# Link Zshrc 
-ln -sf "$DOTFILES_DIR/.zshrc" ~/.zshrc
-echo "✓ Zshrc linked to ~/.zshrc"
 
 # Link Aliases 
 ln -sf "$DOTFILES_DIR/.aliases" ~/.aliases
