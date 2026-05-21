@@ -14,7 +14,9 @@ alias srcz="source ~/.zshrc"
 alias srcb="source ~/.bashrc"
 alias srct="tmux source ~/.tmux.conf"
 
-alias update="sudo apt update && sudo apt upgrade"
+alias aptupdate="sudo apt update && sudo apt upgrade"
+
+alias archupdate="sudo pacman -Syu"
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
