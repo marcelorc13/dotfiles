@@ -1,23 +1,28 @@
+# ── Editors ──────────────────────────────────────────────────────────────────
 alias vim="nvim"
 alias vi="nvim"
 
-alias oil="nvim -c Oil"
+alias oil="nvim -c Oil"   # open nvim directly in Oil file explorer
 
+# ── TUI Tools ─────────────────────────────────────────────────────────────────
 alias lgit="lazygit"
+alias dash="gh dash"      # GitHub dashboard (gh-dash)
 
-alias dash="gh dash"
-
+# ── Shell ─────────────────────────────────────────────────────────────────────
 alias c="clear"
 alias Q="exit"
 
-alias srcz="source ~/.zshrc"
-alias srcb="source ~/.bashrc"
-alias srct="tmux source ~/.tmux.conf"
+# ── Config Reload ─────────────────────────────────────────────────────────────
+alias zsrc="source ~/.zshrc"
+alias bsrc="source ~/.bashrc"
+alias tsrc="tmux source ~/.tmux.conf"
 
-alias aptupdate="sudo apt update && sudo apt upgrade"
+# ── System Updates ────────────────────────────────────────────────────────────
+alias ubupdate="sudo apt update && sudo apt upgrade"  # Ubuntu
+alias arupdate="sudo pacman -Syu"                     # Arch
+alias omupdate="omarchy update"                       # Omarchy desktop
 
-alias archupdate="sudo pacman -Syu"
-
+# ── Colors ────────────────────────────────────────────────────────────────────
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -27,14 +32,15 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
+# ── Navigation ────────────────────────────────────────────────────────────────
 alias ..='cd ..'
 
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# ── File Listing ──────────────────────────────────────────────────────────────
+alias ll='ls -alF'   # long list, all files, classify
+alias la='ls -A'     # all files, no . and ..
+alias l='ls -CF'     # columns, classify
 
-# git aliases
+# ── Git ───────────────────────────────────────────────────────────────────────
 alias gs="git status"
 alias ga="git add"
 alias gaa="git add --all"
@@ -43,18 +49,26 @@ alias gca="git commit --amend"
 alias gps="git push"
 alias gpl="git pull"
 alias gd="git diff"
-alias grs="git restore --staged"
-alias grsa="git restore --staged ."
+alias grs="git restore --staged"    # unstage single file
+alias grsa="git restore --staged ." # unstage all
 
+# git log variants
 alias gl="git log --decorate --all"
 alias glo="git log --oneline --decorate --all"
 alias gld="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 
+# branch management
 alias gb="git branch"
 alias gsw="git switch"
-alias gswc="git switch -c"
+alias gswc="git switch -c"  # create and switch to new branch
 alias gm="git merge"
 
+# ── Misc ──────────────────────────────────────────────────────────────────────
+alias open="xdg-open"   # xdg open (Linux equivalent of macOS open)
+
+# ── Functions ─────────────────────────────────────────────────────────────────
+
+# create or attach to a tmux session by name
 tmuxnew() {
     if [ -z "$1" ]; then
         echo "Usage: tmmuxnew <nome_da_sessao>"
@@ -71,6 +85,7 @@ tmuxnew() {
     fi
 }
 
+# connect to a local postgres db with user and port
 psqlnew() {
     if [ -z "$1" ]; then
         echo "Usage: psqlnew <user> <port>"
@@ -81,6 +96,7 @@ psqlnew() {
     psql -U "$DB_USER" -p "$DB_PORT" -h localhost -d postgres
 }
 
+# shorthand for aichat
 ai() {
     if [ -z "$*" ]; then
         echo "Usage: ai <question>"
@@ -89,7 +105,7 @@ ai() {
     aichat "$*"
 }
 
+# mkdir + cd in one step
 mkcd() {
   mkdir -p "$1" && cd "$1"
 }
-
